@@ -27,15 +27,15 @@ const searchRouter=require("./routes/search");
 const dbUrl=process.env.ATLASDB_URL;
 
 main()
-.then(()=>{
-    console.log("connected to DB");
+.then((connection)=>{
+    console.log("connected to DB",connection.connection.name);
 })
 .catch((err)=>{
     console.log(err);
 });
 
 async function main(){
-     await mongoose.connect(
+     const connection=await mongoose.connect(
         dbUrl,
         {
             tls:true,
@@ -43,6 +43,7 @@ async function main(){
         }
      );
     //  MONGO_URL);
+    return connection;
 }
 
 app.set("view engine","ejs");
