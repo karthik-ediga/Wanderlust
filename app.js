@@ -89,6 +89,11 @@ app.use((req,res,next)=>{
     next();
 });
 
+//home page
+app.get("/",(req,res)=>{
+    res.render("home");
+})
+
 // app.get("/demouser",async(req,res)=>{
 //     let fakeUser=new User({
 //         email:"student@gmail.com",
