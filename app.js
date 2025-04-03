@@ -21,6 +21,8 @@ const reviewRouter=require("./routes/review.js");
 const userRouter=require("./routes/user.js");
 const filterRouter=require("./routes/filter");
 const searchRouter=require("./routes/search");
+const privacyRouter=require("./routes/privacy");
+const termsRouter=require("./routes/terms");
 
 // const MONGO_URL="mongodb://127.0.0.1:27017/wanderlust";
 
@@ -108,6 +110,8 @@ app.use("/listings/:id/reviews",reviewRouter);
 app.use("/",userRouter);
 app.use("/filter", filterRouter);
 app.use("/search",searchRouter);
+app.use("/privacy",privacyRouter);
+app.use("/terms",termsRouter);
 
 // app.get("/test",async(req,res)=>{
 //    let sampleListing=new Listing({
