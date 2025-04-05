@@ -46,7 +46,7 @@ text-decoration: underline;
     align-content:space-around;
 }
 /* card */
-.listing-card{
+.card{
     border:none !important;
     margin-bottom:2rem;
 }
