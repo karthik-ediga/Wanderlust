@@ -112,9 +112,11 @@
                 </div>
                 <p class="card-text rcom mt-1 mb-2 ms-2"><%=review.comment%></p>
                </div>
+               <% if (currentUser && review.author._id.equals(currentUser._id)) { %>
                <form action="/listings/<%=listing._id%>/reviews/<%=review._id%>?_method=delete" class="mb-3" method="post">
                 <button class="btn btn-sm btn-dark ms-2">Delete</button>
                </form>
+               <% } %>
             </div>
             <%}%>
         </div> 
